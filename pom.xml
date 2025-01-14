@@ -19,8 +19,9 @@
         <changelist>999999-SNAPSHOT</changelist>
         <gitHubRepo>jenkinsci/batch-task-plugin</gitHubRepo>
         <gitHubRepo>jenkinsci/${project.artifactId}-plugin</gitHubRepo>
-        <!-- remember to change the io.jenkins.tools.bom artifact when changing this -->
-        <jenkins.version>2.387.3</jenkins.version>
+        <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
+        <jenkins.baseline>2.387</jenkins.baseline>
+        <jenkins.version>${jenkins.baseline}.3</jenkins.version>
         <!--powermock.version>1.6.1</powermock.version-->
         <findbugs.failOnError>false</findbugs.failOnError>
         <jenkins-test-harness.version>2099.vc95b_86578f37</jenkins-test-harness.version>
@@ -86,7 +87,7 @@
       <dependencies>
         <dependency>
           <groupId>io.jenkins.tools.bom</groupId>
-          <artifactId>bom-2.387.x</artifactId>
+          <artifactId>bom-${jenkins.baseline}.x</artifactId>
           <version>2143.ve4c3c9ec790a</version>
           <scope>import</scope>
           <type>pom</type>
